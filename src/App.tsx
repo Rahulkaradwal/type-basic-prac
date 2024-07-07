@@ -1,7 +1,14 @@
 import Todo from './components/Todo';
+import TodoClass from './models/Todo';
 
 function App() {
-  return <Todo item={['learn react', 'typescirpt', 'nodejs']} />;
+  const todo = [
+    new TodoClass('Learn React'),
+    new TodoClass('Type script'),
+    new TodoClass('NodeJS'),
+  ];
+
+  return <Todo item={todo} />;
 }
 
 export default App;
