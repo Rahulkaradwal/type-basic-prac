@@ -1,5 +1,7 @@
+import Todo from './components/Todo';
+
 function App() {
-  return <div>Hello Type</div>;
+  return <Todo item={['learn react', 'typescirpt', 'nodejs']} />;
 }
 
 export default App;
