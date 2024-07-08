@@ -19,10 +19,16 @@ function App() {
     });
   };
 
+  const removeTodoHandler = (todoId: string) => {
+    setTodos((preVal) => {
+      return preVal.filter((val) => val.id !== todoId);
+    });
+  };
+
   return (
     <div>
       <TodoForm onAddTodo={addTotoHandler} />
-      <Todo item={todos} />
+      <Todo item={todos} onRemoveTodo={removeTodoHandler} />
     </div>
   );
 }
