@@ -1,9 +1,10 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
+import { TodoContext } from '../context/TodoContext';
 
-const TodoForm: React.FC<{
-  onAddTodo: (text: string) => void;
-}> = (props) => {
+const TodoForm: React.FC = () => {
   const todoInput = useRef<HTMLInputElement>(null);
+
+  const ctxVal = useContext(TodoContext);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -12,8 +13,7 @@ const TodoForm: React.FC<{
     if (enteredText?.trim().length === 0) {
       return;
     }
-
-    props.onAddTodo(enteredText);
+    ctxVal.addTodo(enteredText);
   };
 
   return (
